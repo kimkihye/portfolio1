@@ -1,0 +1,55 @@
+header{
+    width: 100%;
+    //position: absolute;
+    .inner{
+        width: 1180px;
+        height: 120px;
+        margin: 0 auto;
+        position: relative;
+        h1{
+            position: relative;
+            right: 200px;
+            top: 50px;
+            a{
+                position: absolute;
+                font: bold 30px/1 arial;
+                color: #000;
+                border-bottom: 1px solid #000;
+                margin-top: 10px;
+                
+            }
+        }
+        .menuWeb #gnb{
+            position: absolute;
+            top: 50px;
+            //top: 50px;
+            right: -20%;
+            li{
+                position: relative;
+                float: left;
+                margin-right: 20px;
+
+                a{
+                    display: block;
+                    padding: 14px 20px;
+                    font: 15px/1 arial;
+                    color: #555;
+                }
+                &:hover{
+                    border-bottom: 2px solid #888;
+                }
+            }
+        }
+        .util{
+            position: absolute;
+            top: 10px;
+            right: -16%;
+            i{
+                margin-top: 15px;
+                position: absolute;
+                left: 50px;
+                cursor: pointer;
+            }
+        }
+    }
+}

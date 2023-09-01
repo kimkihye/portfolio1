@@ -1,0 +1,442 @@
+@charset "utf-8";
+
+$size : 400px;
+$deg : 50deg;
+
+figure {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    #slider {
+        width: $size;
+        height: $size;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: calc(-1 * $size / 2.5);
+        margin-left: calc(-1 * $size / 2);
+
+        ul {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            //li 의 공통스타일
+            li {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0.9;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 99999px;
+                transition: 1s;
+
+                h2 {
+                    font: normal 24px/1 "arial";
+                    color: #000;
+                    position: absolute;
+                    top: 120%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    letter-spacing: 2px;
+                    transition: 1.5s;
+                }
+
+                .inner {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-repeat: inherit;
+                    //자식요소가 부모의 요소를 상속 받는다는 의미
+                    background-size: inherit;
+                    background-position: inherit;
+
+                    img{
+                        width: 400px;
+                        height: 400px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-image: inherit;
+                        background-repeat: inherit;
+                        border-radius: 50%;
+                        transition: 1.5s;
+                    }
+
+                    //그림자효과를 before로 넣은것
+                    &::before {
+                        top: 10%;
+                        left: 2%;
+                        filter: blur(20px);
+                        opacity: 0.7;
+                    }
+                }
+
+                a {
+                    display: block;
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    bottom: 0%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 20px;
+                    opacity: 0;
+                    transition: opacity 1s, bottom 1s, width 0.5s 1s;
+
+                    &::before,
+                    span {
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        font: bolder 11px/1 "anton";
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        letter-spacing: 2px;
+                        color: #000;
+                        border-radius: 20px;
+                        background-image: inherit;
+                    }
+
+                    span {
+                        opacity: 0;
+                        text-indent: -40px; //글자 들여쓰기(-니까 내여쓰기)
+                        transition: 0.5s 1.0s;
+                        //1.4초의 딜레이, 0.5초의 듀레이션
+                        border: 1px solid #000;
+                        &:hover{
+                            background-color: #444;
+                            color: #fff;
+                            transition: 0.5s;
+                        }
+                    }
+
+                    //버튼의 그림자 효과를 before로 넣은것
+                    &::before {
+                        transform: translateY(30%);
+                        filter: blur(10px) saturate(2);
+                        opacity: 0.8;
+                    }
+                }
+            }
+
+            //li의 개별 스타일
+            li {
+                &:nth-of-type(1) {
+                    transform: translateX(-$size * 3) scale(0.5);
+
+                    //.inner::after - 실제 그림이 보이는 것
+                    //.inner::before그림자효과를 지니고 있는 개체
+                    .inner::after,
+                    .inner::before {
+                        transform: rotate(-$deg * 3);
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    transform: translateX(-$size * 2) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform: rotate(-$deg * 2);
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    transform: translateX(-$size * 1) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform: rotate(-$deg * 1);
+                    }
+                }
+
+                //활성화 된 패널
+                &:nth-of-type(4) {
+                    opacity: 1;
+                    transform: translateX(0px) scale(1);
+
+                    h2 {
+                        font-size: 4vw;
+                        opacity: 0.8;
+                        color: #ececec;
+                        top: -15vh;
+                        letter-spacing: 0px;
+                        text-align: center;
+                    }
+
+                    .inner::before,
+                    .inner::after {
+                        transform: rotate($deg * 0);
+                    }
+
+                    a {
+
+                        opacity: 1;
+                        bottom: -18%;
+                        width: 200px;
+
+                        span {
+                            opacity: 1;
+                            text-indent: 0px;
+                        }
+
+                        &.off {
+                            // opacity: 0;
+                            // z-index: -9;
+                            display: none;
+                        }
+                    }
+                }
+
+                &:nth-of-type(5) {
+                    transform: translateX($size * 1) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform: rotate($deg * 1);
+                    }
+                }
+
+                &:nth-of-type(6) {
+                    transform: translateX($size * 2) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform: rotate($deg * 2);
+                    }
+                }
+
+                &:nth-of-type(7) {
+                    transform: translateX($size * 3) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform: rotate($deg * 3);
+                    }
+                }
+
+            }
+        }
+    }
+
+    .btns {
+        position: absolute;
+        bottom: 13vh;
+        right: 10vw;
+        display: flex;
+        gap: 50px;
+        transition: 0.5s;
+
+        .prev,
+        .next{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1px solid #bbb;
+            cursor: pointer;
+            position: relative;
+
+            &::before,
+            &::after{
+                content: '';
+                display: block;
+                width: 17px;
+                height: 2px;
+                background-color: #bbb;
+                position: absolute;
+            }
+
+            &::before{
+                top: 49%;
+                transform: rotate(45deg) translateX(0px);
+            }
+
+            &::after{
+                bottom: 49%;
+                transform: rotate(-45deg) translateX(0px);
+            }
+
+            span{
+                width: 20px;
+                height: 2px;
+                background-color: #bbb;
+                position: absolute;
+                top: 49%;
+                opacity: 1;
+            }
+        }
+
+        .prev{
+            &::before,
+            &::after{
+                left: 25px;
+                transform-origin: left center;
+            }
+
+            span{
+                left: 25px;
+            }
+        }
+
+        .next{
+            &::before,
+            &::after{
+                right: 25px;
+                transform-origin: right center;
+            }
+
+            span{
+                right: 25px;
+            }
+        }
+
+
+        // div {
+        //     cursor: pointer;
+        //     width: 120px;
+        //     height: 36px;
+        //     border-radius: 18px;
+        //     background-color: #999;
+        //     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     font: 12px/1 "anton";
+        //     color: #fff;
+        //     letter-spacing: 4px;
+
+        //     &:hover {
+        //         background-color: #555;
+        //     }
+        // }
+
+        // &.off {
+        //     right: 5vw;
+        //     opacity: 0;
+        //     z-index: -3;
+        // }
+    }
+
+    .pop {
+        width: 50vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -50vw;
+        // left: 0;
+        background-color: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 22vh 5vw 10vh 6vw;
+        transition: 0.5s;
+
+        h2 {
+            font: 7vw/1 "arial";
+            color: #fff;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: 1s 0.3s;
+        }
+
+        p {
+            font: 22px/1.2 "arial";
+            color: #ccc;
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: 0.5s 0.8s;
+        }
+
+        .close {
+
+            width: 200px;
+            height: 40px;
+            border: 2px solid #fff;
+            font: bold 14px/1 "arial";
+            color: #fff;
+            cursor: pointer;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+
+            &:hover {
+                background-color: #fff;
+                color: #777;
+            }
+
+        }
+
+        &.on {
+            left: 0;
+
+            h2,
+            p,
+            .close {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:1199px) {
+    figure {
+        .banner {
+            ul {
+                li {
+                    &:nth-of-type(4) {
+                        transform: translateX(0px) scale(0.7);
+
+                        h2 {
+                            top: -22vh;
+                            font-size: 37vw;
+                        }
+
+                        a {
+                            width: 100%;
+                            bottom: -25%;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        .btns {
+            width: 100%;
+            bottom: 6vh;
+            right: 0;
+            justify-content: center;
+            // justify-content: space-evenly;
+
+
+        }
+    }
+}
+    

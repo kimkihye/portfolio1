@@ -1,0 +1,97 @@
+#banner{
+    width: 100%;
+    height: 40vh;
+    transition: 1.0s;
+    position: relative;
+    overflow: hidden;
+
+    .panel{
+        position: relative;
+        width: 1180px;
+        height: 40vh;
+        margin: 0 auto;
+        transition: 1.0s;
+        
+        li{
+            position: absolute;
+            width: 170%;
+            height: 100%;
+            float: left;
+            margin-left: -400px;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 1s;
+            
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+
+            &.on{
+                opacity: 90%;
+                z-index: 2;
+            }
+
+            &:nth-of-type(1){
+                background-image: url(../이미지/banner.jpg);
+            }
+            &:nth-of-type(2){
+                background-image: url(../이미지/banner2.jpg);
+            }
+            &:nth-of-type(3){
+                background-image: url(../이미지/banner3.jpg);
+            }
+        }
+    }
+
+    nav {
+        position: absolute;
+        z-index: 3;
+        bottom: 9vh;
+        right: 10vw;
+        display: flex;
+        gap: 40px;
+        // gap은 flex상황에서만 사용할수 있고, 부모요소에 적용합니다
+        color: #fff;
+        cursor: pointer;
+
+        i {
+            display: inline-block;
+
+            &.on {
+                color: #222;
+                transform: scale(2);
+            }
+        }
+    }
+
+    .btns {
+        position: absolute;
+        left: 10vw;
+        bottom: 10vh;
+        display: flex;
+        gap: 10px;
+        z-index: 3;
+
+        // li {
+        //     width: 70px;
+        //     height: 5px;
+        //     background-color: #fff;
+        //     transition: 0.5s;
+        //     cursor: pointer;
+
+        //     &.on {
+        //         width: 150px;
+        //         background-color: #222;
+        //     }
+        // }
+    }
+    .bar {
+        width: 0%;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 4;
+    }
+}

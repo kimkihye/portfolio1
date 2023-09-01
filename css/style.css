@@ -1,0 +1,798 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+}
+header .inner {
+  width: 1180px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative;
+}
+header .inner h1 {
+  position: relative;
+  right: 200px;
+  top: 50px;
+}
+header .inner h1 a {
+  position: absolute;
+  font: bold 30px/1 arial;
+  color: #000;
+  border-bottom: 1px solid #000;
+  margin-top: 10px;
+}
+header .inner .menuWeb #gnb {
+  position: absolute;
+  top: 50px;
+  right: -20%;
+}
+header .inner .menuWeb #gnb li {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+}
+header .inner .menuWeb #gnb li a {
+  display: block;
+  padding: 14px 20px;
+  font: 15px/1 arial;
+  color: #555;
+}
+header .inner .menuWeb #gnb li:hover {
+  border-bottom: 2px solid #888;
+}
+header .inner .util {
+  position: absolute;
+  top: 10px;
+  right: -16%;
+}
+header .inner .util i {
+  margin-top: 15px;
+  position: absolute;
+  left: 50px;
+  cursor: pointer;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#main video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#main .inner {
+  width: 1180px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#main .inner h2 {
+  font: bold 80px/1 "Nanum Myeongjo";
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#main .inner p {
+  font: normal 15px/1 arial;
+  color: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 40px;
+  line-height: 23px;
+}
+#main .inner .btnOpen {
+  font: normal 13px/1 arial;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 40px;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 150px;
+}
+#main .inner .btnOpen:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #fff;
+  transition: 1s;
+}
+
+aside {
+  width: 60vw;
+  height: 60vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+aside .top {
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+aside .right {
+  width: 1px;
+  height: 0%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+aside .bottom {
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+aside .left {
+  width: 1px;
+  height: 0%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+aside .inner {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(15px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+aside .inner .pic {
+  width: 35%;
+  object-fit: cover;
+}
+aside .inner .content {
+  width: 60%;
+}
+aside .inner .content h2 {
+  font: 5vw/1 arial;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+aside .inner .content p {
+  font: 16px/1.3 arial;
+  color: #fff;
+}
+aside .inner .content .btnClose {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+#brand {
+  width: 100%;
+  padding: 200px 0;
+}
+#brand .inner {
+  width: 1500px;
+  margin: 0 auto;
+  position: relative;
+}
+#brand .inner h1 {
+  font: 30px/1 "Nanum Myeongjo";
+  text-align: center;
+  border-top: 1px solid #000;
+  padding: 20px 0px;
+}
+#brand .inner .wrap {
+  width: 100%;
+}
+#brand .inner .wrap article {
+  width: 350px;
+  float: left;
+  margin-right: 20px;
+}
+#brand .inner .wrap article:last-child {
+  margin-right: 0px;
+}
+#brand .inner .wrap article .pic {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+#brand .inner .wrap article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s;
+}
+#brand .inner .wrap article .pic a {
+  font: 11px/1 arial;
+  color: #000;
+  position: absolute;
+  margin-top: 23%;
+  margin-left: -130px;
+  opacity: 0;
+}
+#brand .inner .wrap article .pic:hover img {
+  opacity: 80%;
+}
+#brand .inner .wrap article .pic:hover a {
+  opacity: 1;
+  background-color: #fff;
+  opacity: 80%;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+#brand .inner .wrap article span {
+  font: 10px/1 arial;
+  color: #555;
+}
+#brand .inner .wrap article h2 {
+  font: 20px/1 arial;
+  color: #111;
+  margin-top: 20px;
+}
+#brand .inner .wrap article p {
+  font: 13px/1 arial;
+  color: #666;
+  margin-top: 20px;
+  line-height: 20px;
+}
+
+figure {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+figure #slider {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -160px;
+  margin-left: -200px;
+}
+figure #slider ul {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+figure #slider ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 99999px;
+  transition: 1s;
+}
+figure #slider ul li h2 {
+  font: normal 24px/1 "arial";
+  color: #000;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 2px;
+  transition: 1.5s;
+}
+figure #slider ul li .inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: inherit;
+  background-size: inherit;
+  background-position: inherit;
+}
+figure #slider ul li .inner img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+figure #slider ul li .inner::before, figure #slider ul li .inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-repeat: inherit;
+  border-radius: 50%;
+  transition: 1.5s;
+}
+figure #slider ul li .inner::before {
+  top: 10%;
+  left: 2%;
+  filter: blur(20px);
+  opacity: 0.7;
+}
+figure #slider ul li a {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 1s, bottom 1s, width 0.5s 1s;
+}
+figure #slider ul li a::before,
+figure #slider ul li a span {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font: bolder 11px/1 "anton";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  color: #000;
+  border-radius: 20px;
+  background-image: inherit;
+}
+figure #slider ul li a span {
+  opacity: 0;
+  text-indent: -40px;
+  transition: 0.5s 1s;
+  border: 1px solid #000;
+}
+figure #slider ul li a span:hover {
+  background-color: #444;
+  color: #fff;
+  transition: 0.5s;
+}
+figure #slider ul li a::before {
+  transform: translateY(30%);
+  filter: blur(10px) saturate(2);
+  opacity: 0.8;
+}
+figure #slider ul li:nth-of-type(1) {
+  transform: translateX(-1200px) scale(0.5);
+}
+figure #slider ul li:nth-of-type(1) .inner::after,
+figure #slider ul li:nth-of-type(1) .inner::before {
+  transform: rotate(-150deg);
+}
+figure #slider ul li:nth-of-type(2) {
+  transform: translateX(-800px) scale(0.5);
+}
+figure #slider ul li:nth-of-type(2) .inner::after,
+figure #slider ul li:nth-of-type(2) .inner::before {
+  transform: rotate(-100deg);
+}
+figure #slider ul li:nth-of-type(3) {
+  transform: translateX(-400px) scale(0.5);
+}
+figure #slider ul li:nth-of-type(3) .inner::after,
+figure #slider ul li:nth-of-type(3) .inner::before {
+  transform: rotate(-50deg);
+}
+figure #slider ul li:nth-of-type(4) {
+  opacity: 1;
+  transform: translateX(0px) scale(1);
+}
+figure #slider ul li:nth-of-type(4) h2 {
+  font-size: 4vw;
+  opacity: 0.8;
+  color: #ececec;
+  top: -15vh;
+  letter-spacing: 0px;
+  text-align: center;
+}
+figure #slider ul li:nth-of-type(4) .inner::before,
+figure #slider ul li:nth-of-type(4) .inner::after {
+  transform: rotate(0deg);
+}
+figure #slider ul li:nth-of-type(4) a {
+  opacity: 1;
+  bottom: -18%;
+  width: 200px;
+}
+figure #slider ul li:nth-of-type(4) a span {
+  opacity: 1;
+  text-indent: 0px;
+}
+figure #slider ul li:nth-of-type(4) a.off {
+  display: none;
+}
+figure #slider ul li:nth-of-type(5) {
+  transform: translateX(400px) scale(0.5);
+}
+figure #slider ul li:nth-of-type(5) .inner::after,
+figure #slider ul li:nth-of-type(5) .inner::before {
+  transform: rotate(50deg);
+}
+figure #slider ul li:nth-of-type(6) {
+  transform: translateX(800px) scale(0.5);
+}
+figure #slider ul li:nth-of-type(6) .inner::after,
+figure #slider ul li:nth-of-type(6) .inner::before {
+  transform: rotate(100deg);
+}
+figure #slider ul li:nth-of-type(7) {
+  transform: translateX(1200px) scale(0.5);
+}
+figure #slider ul li:nth-of-type(7) .inner::after,
+figure #slider ul li:nth-of-type(7) .inner::before {
+  transform: rotate(150deg);
+}
+figure .btns {
+  position: absolute;
+  bottom: 13vh;
+  right: 10vw;
+  display: flex;
+  gap: 50px;
+  transition: 0.5s;
+}
+figure .btns .prev,
+figure .btns .next {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  position: relative;
+}
+figure .btns .prev::before, figure .btns .prev::after,
+figure .btns .next::before,
+figure .btns .next::after {
+  content: "";
+  display: block;
+  width: 17px;
+  height: 2px;
+  background-color: #bbb;
+  position: absolute;
+}
+figure .btns .prev::before,
+figure .btns .next::before {
+  top: 49%;
+  transform: rotate(45deg) translateX(0px);
+}
+figure .btns .prev::after,
+figure .btns .next::after {
+  bottom: 49%;
+  transform: rotate(-45deg) translateX(0px);
+}
+figure .btns .prev span,
+figure .btns .next span {
+  width: 20px;
+  height: 2px;
+  background-color: #bbb;
+  position: absolute;
+  top: 49%;
+  opacity: 1;
+}
+figure .btns .prev::before, figure .btns .prev::after {
+  left: 25px;
+  transform-origin: left center;
+}
+figure .btns .prev span {
+  left: 25px;
+}
+figure .btns .next::before, figure .btns .next::after {
+  right: 25px;
+  transform-origin: right center;
+}
+figure .btns .next span {
+  right: 25px;
+}
+figure .pop {
+  width: 50vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -50vw;
+  background-color: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 22vh 5vw 10vh 6vw;
+  transition: 0.5s;
+}
+figure .pop h2 {
+  font: 7vw/1 "arial";
+  color: #fff;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 1s 0.3s;
+}
+figure .pop p {
+  font: 22px/1.2 "arial";
+  color: #ccc;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 0.5s 0.8s;
+}
+figure .pop .close {
+  width: 200px;
+  height: 40px;
+  border: 2px solid #fff;
+  font: bold 14px/1 "arial";
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+figure .pop .close:hover {
+  background-color: #fff;
+  color: #777;
+}
+figure .pop.on {
+  left: 0;
+}
+figure .pop.on h2,
+figure .pop.on p,
+figure .pop.on .close {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+@media screen and (max-width: 1199px) {
+  figure .banner ul li:nth-of-type(4) {
+    transform: translateX(0px) scale(0.7);
+  }
+  figure .banner ul li:nth-of-type(4) h2 {
+    top: -22vh;
+    font-size: 37vw;
+  }
+  figure .banner ul li:nth-of-type(4) a {
+    width: 100%;
+    bottom: -25%;
+  }
+  figure .btns {
+    width: 100%;
+    bottom: 6vh;
+    right: 0;
+    justify-content: center;
+  }
+}
+#banner {
+  width: 100%;
+  height: 40vh;
+  transition: 1s;
+  position: relative;
+  overflow: hidden;
+}
+#banner .panel {
+  position: relative;
+  width: 1180px;
+  height: 40vh;
+  margin: 0 auto;
+  transition: 1s;
+}
+#banner .panel li {
+  position: absolute;
+  width: 170%;
+  height: 100%;
+  float: left;
+  margin-left: -400px;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1s;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+#banner .panel li.on {
+  opacity: 90%;
+  z-index: 2;
+}
+#banner .panel li:nth-of-type(1) {
+  background-image: url(../이미지/banner.jpg);
+}
+#banner .panel li:nth-of-type(2) {
+  background-image: url(../이미지/banner2.jpg);
+}
+#banner .panel li:nth-of-type(3) {
+  background-image: url(../이미지/banner3.jpg);
+}
+#banner nav {
+  position: absolute;
+  z-index: 3;
+  bottom: 9vh;
+  right: 10vw;
+  display: flex;
+  gap: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+#banner nav i {
+  display: inline-block;
+}
+#banner nav i.on {
+  color: #222;
+  transform: scale(2);
+}
+#banner .btns {
+  position: absolute;
+  left: 10vw;
+  bottom: 10vh;
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+#banner .bar {
+  width: 0%;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+}
+
+#layout {
+  width: 100%;
+  padding: 150px 0;
+}
+#layout .inner {
+  width: 1210px;
+  margin: 0 auto;
+  position: relative;
+}
+#layout .inner h1 {
+  font: 30px/1 "Nanum Myeongjo";
+  text-align: left;
+  border-bottom: 1px solid #000;
+  padding: 20px 0px;
+}
+#layout .inner .lay {
+  width: 100%;
+}
+#layout .inner .lay article {
+  width: 280px;
+  float: left;
+  margin-right: 30px;
+}
+#layout .inner .lay article:last-child {
+  margin-right: 0px;
+}
+#layout .inner .lay article .pic1 {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+#layout .inner .lay article .pic1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s;
+}
+#layout .inner .lay article .pic1 a {
+  text-align: center;
+  font-size: 70px;
+  color: #fff;
+  position: absolute;
+  margin-top: 60px;
+  margin-left: -175px;
+  opacity: 0;
+}
+#layout .inner .lay article .pic1:hover img {
+  opacity: 70%;
+}
+#layout .inner .lay article .pic1:hover a {
+  opacity: 1;
+  transition: 0.5s;
+}
+#layout .inner .lay article h2 {
+  font: normal 25px/1 arial;
+  margin-top: 15px;
+  border-bottom: 1px solid #000;
+  padding: 5px;
+}
+#layout .inner .lay article p {
+  font: normal 13px/1 arial;
+  color: #555;
+  margin-top: 10px;
+  text-align: end;
+}
+
+footer {
+  width: 100%;
+  padding-top: 100px;
+  margin-top: 300px;
+  padding-bottom: 100px;
+  background-color: #eee;
+}
+footer .inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+footer .inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+footer .inner h1 {
+  font: bold 24px arial;
+  float: left;
+  border-bottom: 1px solid #000;
+}
+footer .inner ul {
+  float: left;
+}
+footer .inner ul li {
+  float: left;
+  margin-left: 60px;
+}
+footer .inner ul li a {
+  font: 14px/1 arial;
+  color: #000;
+}
+footer .inner ul li i {
+  opacity: 0;
+}
+footer .inner ul li:hover a {
+  transition: 0.5s;
+  margin-left: 10px;
+}
+footer .inner ul li:hover i {
+  float: left;
+  margin-top: 5px;
+  margin-left: -5px;
+  opacity: 1;
+}
+footer .inner address {
+  float: left;
+  width: 100%;
+  font: 14px/1.3 arial;
+  margin-top: 40px;
+  line-height: 30px;
+  color: #555;
+}
+footer .inner p {
+  float: left;
+  margin-top: 50px;
+  color: #aaa;
+}
+
+/*# sourceMappingURL=style.css.map */
